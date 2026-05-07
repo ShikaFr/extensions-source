@@ -16,10 +16,10 @@ jobs:
           distribution: 'temurin'
 
       - name: Build PhenixScans
-        run: ./gradlew :extensions:individual:fr:phenixscans:assembleDebug
+        run: ./gradlew :src:fr:phenixscans:assembleDebug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: phenixscans-apk
-          path: src/fr/phenixscans/build/outputs/apk/debug/*.apk
+          path: src/fr/phenixscans/build/outputs/apk/**/*.apk
